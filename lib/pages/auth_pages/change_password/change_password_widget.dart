@@ -113,276 +113,278 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
             maxWidth: 570,
           ),
           decoration: const BoxDecoration(),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Align(
-                alignment: const AlignmentDirectional(0.00, 0.00),
-                child: Text(
-                  'Change Password',
-                  style: FFTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Urbanist',
-                    fontSize: 30,
-                  ),
-                ),
-              ),
-              Align(
-                alignment: const AlignmentDirectional(0.00, 0.00),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
-                    child: Image.asset(
-                      'assets/images/forgot_password_img.png',
-                      width: 254,
-                      height: 245,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
-              Align(
-                alignment: const AlignmentDirectional(0.00, 0.00),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16, 10, 16, 10),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  alignment: const AlignmentDirectional(0.00, 0.00),
                   child: Text(
-                    'Update your password for enhanced account security. Enter your old password, choose a new one, and click to save the changes.',
-                    textAlign: TextAlign.center,
-                    style: FFTheme.of(context).labelMedium,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
-                child: Container(
-                  width: double.infinity,
-                  child: TextFormField(
-                    controller:  emailAddressController1,
-                    focusNode:  emailAddressFocusNode1,
-                    obscureText: !emailAddressVisibility1,
-                    decoration: InputDecoration(
-                      labelText: 'Your old password',
-                      labelStyle: FFTheme.of(context).labelMedium,
-                      hintText: 'Enter your old password',
-                      hintStyle: FFTheme.of(context).labelMedium,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FFTheme.of(context).alternate,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FFTheme.of(context).secondaryText,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FFTheme.of(context).error,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FFTheme.of(context).error,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      filled: true,
-                      fillColor:
-                      FFTheme.of(context).secondaryBackground,
-                      contentPadding:
-                      const EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
-                      suffixIcon: InkWell(
-                        onTap: () => setState(
-                              () => emailAddressVisibility1 =
-                          !emailAddressVisibility1,
-                        ),
-                        focusNode: FocusNode(skipTraversal: true),
-                        child: Icon(
-                          emailAddressVisibility1
-                              ? Icons.visibility_outlined
-                              : Icons.visibility_off_outlined,
-                          color: const Color(0xFF757575),
-                          size: 22,
-                        ),
-                      ),
+                    'Change Password',
+                    style: FFTheme.of(context).headlineMedium.override(
+                      fontFamily: 'Urbanist',
+                      fontSize: 30,
                     ),
-                    style: FFTheme.of(context).bodyMedium,
-                    keyboardType: TextInputType.emailAddress,
-                    cursorColor: FFTheme.of(context).primary,
-                    validator:   null,
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
-                child: Container(
-                  width: double.infinity,
-                  child: TextFormField(
-                    controller: emailAddressController2,
-                    focusNode:  emailAddressFocusNode2,
-                    obscureText: !emailAddressVisibility2,
-                    decoration: InputDecoration(
-                      labelText: 'Your new password',
-                      labelStyle: FFTheme.of(context).labelMedium,
-                      hintText: 'Enter your new password',
-                      hintStyle: FFTheme.of(context).labelMedium,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FFTheme.of(context).alternate,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FFTheme.of(context).secondaryText,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FFTheme.of(context).error,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FFTheme.of(context).error,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      filled: true,
-                      fillColor:
-                      FFTheme.of(context).secondaryBackground,
-                      contentPadding:
-                      const EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
-                      suffixIcon: InkWell(
-                        onTap: () => setState(
-                              () => emailAddressVisibility2 =
-                          !emailAddressVisibility2,
-                        ),
-                        focusNode: FocusNode(skipTraversal: true),
-                        child: Icon(
-                          emailAddressVisibility2
-                              ? Icons.visibility_outlined
-                              : Icons.visibility_off_outlined,
-                          color: const Color(0xFF757575),
-                          size: 22,
-                        ),
-                      ),
-                    ),
-                    style: FFTheme.of(context).bodyMedium,
-                    keyboardType: TextInputType.emailAddress,
-                    cursorColor: FFTheme.of(context).primary,
-                    validator: null,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
-                child: Container(
-                  width: double.infinity,
-                  child: TextFormField(
-                    controller: emailAddressController3,
-                    focusNode: emailAddressFocusNode3,
-                    obscureText: !emailAddressVisibility3,
-                    decoration: InputDecoration(
-                      labelText: 'Confirm new password',
-                      labelStyle: FFTheme.of(context).labelMedium,
-                      hintText: 'Confirm your new password',
-                      hintStyle: FFTheme.of(context).labelMedium,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FFTheme.of(context).alternate,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FFTheme.of(context).secondaryText,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FFTheme.of(context).error,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FFTheme.of(context).error,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      filled: true,
-                      fillColor:
-                      FFTheme.of(context).secondaryBackground,
-                      contentPadding:
-                      const EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
-                      suffixIcon: InkWell(
-                        onTap: () => setState(
-                              () => emailAddressVisibility3 =
-                          !emailAddressVisibility3,
-                        ),
-                        focusNode: FocusNode(skipTraversal: true),
-                        child: Icon(
-                          emailAddressVisibility3
-                              ? Icons.visibility_outlined
-                              : Icons.visibility_off_outlined,
-                          color: const Color(0xFF757575),
-                          size: 22,
-                        ),
-                      ),
-                    ),
-                    style: FFTheme.of(context).bodyMedium,
-                    keyboardType: TextInputType.emailAddress,
-                    cursorColor: FFTheme.of(context).primary,
-                    validator: null,
-                  ),
-                ),
-              ),
-              Align(
-                alignment: const AlignmentDirectional(0.00, 0.00),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 18, 0, 0),
-                  child: FFButtonWidget(
-                    onPressed: () {
-                      print('Button-Login pressed ...');
-                    },
-                    text: 'Send Link',
-                    options: FFButtonOptions(
-                      width: 270,
-                      height: 50,
-                      padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                      color: FFTheme.of(context).primary,
-                      textStyle: FFTheme.of(context).titleSmall,
-                      elevation: 3,
-                      borderSide: const BorderSide(
-                        color: Colors.transparent,
-                        width: 1,
+                Align(
+                  alignment: const AlignmentDirectional(0.00, 0.00),
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.asset(
+                        'assets/images/forgot_password_img.png',
+                        width: 254,
+                        height: 245,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+                Align(
+                  alignment: const AlignmentDirectional(0.00, 0.00),
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(16, 10, 16, 10),
+                    child: Text(
+                      'Update your password for enhanced account security. Enter your old password, choose a new one, and click to save the changes.',
+                      textAlign: TextAlign.center,
+                      style: FFTheme.of(context).labelMedium,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
+                  child: Container(
+                    width: double.infinity,
+                    child: TextFormField(
+                      controller:  emailAddressController1,
+                      focusNode:  emailAddressFocusNode1,
+                      obscureText: !emailAddressVisibility1,
+                      decoration: InputDecoration(
+                        labelText: 'Your old password',
+                        labelStyle: FFTheme.of(context).labelMedium,
+                        hintText: 'Enter your old password',
+                        hintStyle: FFTheme.of(context).labelMedium,
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FFTheme.of(context).alternate,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FFTheme.of(context).secondaryText,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FFTheme.of(context).error,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FFTheme.of(context).error,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        filled: true,
+                        fillColor:
+                        FFTheme.of(context).secondaryBackground,
+                        contentPadding:
+                        const EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
+                        suffixIcon: InkWell(
+                          onTap: () => setState(
+                                () => emailAddressVisibility1 =
+                            !emailAddressVisibility1,
+                          ),
+                          focusNode: FocusNode(skipTraversal: true),
+                          child: Icon(
+                            emailAddressVisibility1
+                                ? Icons.visibility_outlined
+                                : Icons.visibility_off_outlined,
+                            color: const Color(0xFF757575),
+                            size: 22,
+                          ),
+                        ),
+                      ),
+                      style: FFTheme.of(context).bodyMedium,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: FFTheme.of(context).primary,
+                      validator:   null,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
+                  child: Container(
+                    width: double.infinity,
+                    child: TextFormField(
+                      controller: emailAddressController2,
+                      focusNode:  emailAddressFocusNode2,
+                      obscureText: !emailAddressVisibility2,
+                      decoration: InputDecoration(
+                        labelText: 'Your new password',
+                        labelStyle: FFTheme.of(context).labelMedium,
+                        hintText: 'Enter your new password',
+                        hintStyle: FFTheme.of(context).labelMedium,
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FFTheme.of(context).alternate,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FFTheme.of(context).secondaryText,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FFTheme.of(context).error,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FFTheme.of(context).error,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        filled: true,
+                        fillColor:
+                        FFTheme.of(context).secondaryBackground,
+                        contentPadding:
+                        const EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
+                        suffixIcon: InkWell(
+                          onTap: () => setState(
+                                () => emailAddressVisibility2 =
+                            !emailAddressVisibility2,
+                          ),
+                          focusNode: FocusNode(skipTraversal: true),
+                          child: Icon(
+                            emailAddressVisibility2
+                                ? Icons.visibility_outlined
+                                : Icons.visibility_off_outlined,
+                            color: const Color(0xFF757575),
+                            size: 22,
+                          ),
+                        ),
+                      ),
+                      style: FFTheme.of(context).bodyMedium,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: FFTheme.of(context).primary,
+                      validator: null,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
+                  child: Container(
+                    width: double.infinity,
+                    child: TextFormField(
+                      controller: emailAddressController3,
+                      focusNode: emailAddressFocusNode3,
+                      obscureText: !emailAddressVisibility3,
+                      decoration: InputDecoration(
+                        labelText: 'Confirm new password',
+                        labelStyle: FFTheme.of(context).labelMedium,
+                        hintText: 'Confirm your new password',
+                        hintStyle: FFTheme.of(context).labelMedium,
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FFTheme.of(context).alternate,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FFTheme.of(context).secondaryText,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FFTheme.of(context).error,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FFTheme.of(context).error,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        filled: true,
+                        fillColor:
+                        FFTheme.of(context).secondaryBackground,
+                        contentPadding:
+                        const EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
+                        suffixIcon: InkWell(
+                          onTap: () => setState(
+                                () => emailAddressVisibility3 =
+                            !emailAddressVisibility3,
+                          ),
+                          focusNode: FocusNode(skipTraversal: true),
+                          child: Icon(
+                            emailAddressVisibility3
+                                ? Icons.visibility_outlined
+                                : Icons.visibility_off_outlined,
+                            color: const Color(0xFF757575),
+                            size: 22,
+                          ),
+                        ),
+                      ),
+                      style: FFTheme.of(context).bodyMedium,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: FFTheme.of(context).primary,
+                      validator: null,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: const AlignmentDirectional(0.00, 0.00),
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 25),
+                    child: FFButtonWidget(
+                      onPressed: () {
+                        print('Button-Login pressed ...');
+                      },
+                      text: 'Send Link',
+                      options: FFButtonOptions(
+                        width: 270,
+                        height: 50,
+                        padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        color: FFTheme.of(context).primary,
+                        textStyle: FFTheme.of(context).titleSmall,
+                        elevation: 3,
+                        borderSide: const BorderSide(
+                          color: Colors.transparent,
+                          width: 1,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
