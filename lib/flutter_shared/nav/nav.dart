@@ -1,21 +1,19 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-
 import '/index.dart';
+import '/flutter_shared/flutter_shared_util.dart';
+import 'serialization_util.dart';
+export 'package:go_router/go_router.dart';
+export 'serialization_util.dart';
 import '/main.dart';
 import '/flutter_shared/flutter_shared_theme.dart';
 import '/flutter_shared/lat_lng.dart';
 import '/flutter_shared/place.dart';
-import '/flutter_shared/flutter_shared_util.dart';
-import 'serialization_util.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-export 'package:go_router/go_router.dart';
-export 'serialization_util.dart';
 
 const kTransitionInfoKey = '__transition_info__';
 
@@ -63,37 +61,49 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   ),
                 )
               : OnBoardingPageWidget(),
+
+
           routes: [
+
+
             FFRoute(
               name: 'RegisterPage',
               path: 'registerPage',
               builder: (context, params) => RegisterPageWidget(),
             ),
+
             FFRoute(
               name: 'LoginPage',
               path: 'loginPage',
               builder: (context, params) => LoginPageWidget(),
             ),
+
             FFRoute(
               name: 'OnBoardingPage',
               path: 'onBoardingPage',
               builder: (context, params) => OnBoardingPageWidget(),
             ),
+
             FFRoute(
               name: 'HomePage',
               path: 'homePage',
               builder: (context, params) => HomePageWidget(),
             ),
+
             FFRoute(
               name: 'ForgotPasswordPage',
               path: 'forgotPasswordPage',
               builder: (context, params) => ForgotPasswordPageWidget(),
             ),
+
             FFRoute(
               name: 'ChangePassword',
               path: 'changePasswordPage',
               builder: (context, params) => ChangePasswordWidget(),
             )
+
+
+
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
       ].map((r) => r.toRoute(appStateNotifier)).toList(),

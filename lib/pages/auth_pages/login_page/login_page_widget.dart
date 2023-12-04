@@ -764,7 +764,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Image.network(
-                                                    'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png',
+                                                    'https://i.imgur.com/7tykYQE.png',
                                                     width: 24.0,
                                                     height: 24.0,
                                                     fit: BoxFit.cover,

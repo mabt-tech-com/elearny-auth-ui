@@ -1,3 +1,4 @@
+import '../admin_user_list/admin_user_list_widget.dart';
 import '/flutter_shared/flutter_shared_icon_button.dart';
 import '/flutter_shared/flutter_shared_theme.dart';
 import '/flutter_shared/flutter_shared_util.dart';
@@ -152,6 +153,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                 ),
               ),
+
+
+
               Align(
                 alignment: const AlignmentDirectional(0.00, 0.00),
                 child: Padding(
@@ -177,6 +181,45 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                 ),
               ),
+
+             const SizedBox(height: 10),
+
+
+              Align(
+                alignment: const AlignmentDirectional(0.00, 0.00),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 18, 0, 0),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AdminUserListWidget( ),
+                        ),
+                      );
+
+
+                    },
+                    text: ' Users List - Admin ',
+                    options: FFButtonOptions(
+                      width: 270,
+                      height: 50,
+                      padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                      color: FFTheme.of(context).primary,
+                      textStyle: FFTheme.of(context).titleSmall,
+                      elevation: 3,
+                      borderSide: const BorderSide(
+                        color: Colors.transparent,
+                        width: 1,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+
             ],
           ),
         ),
