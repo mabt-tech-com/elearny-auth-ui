@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 import '../flutter_shared/flutter_shared_animations.dart';
 import '../flutter_shared/flutter_shared_theme.dart';
 import '../flutter_shared/flutter_shared_util.dart';
+import '../pages/edit_profile_page/edit_profile_page_widget.dart';
 import 'accountUserDropDown_model.dart';
 
 /*import 'account_user_dropdown_model.dart';
@@ -292,60 +293,80 @@ class _AccountUserDropdownWidgetState extends State<AccountUserDropdownWidget>
                       }),
                     ),
                   ),
+
+
+
+
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 12, 4),
-                    child: MouseRegion(
-                      opaque: false,
-                      cursor: SystemMouseCursors.basic ?? MouseCursor.defer,
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 150),
-                        curve: Curves.easeInOut,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: _model.mouseRegionHovered2!
-                              ? FFTheme.of(context).primaryBackground
-                              : FFTheme.of(context)
-                              .secondaryBackground,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                                child: Icon(
-                                  Icons.settings_outlined,
-                                  color:
-                                  FFTheme.of(context).primaryText,
-                                  size: 24,
-                                ),
-                              ),
-                              Expanded(
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      12, 0, 0, 0),
-                                  child: Text(
-                                    'Settings',
-                                    style:
-                                    FFTheme.of(context).bodyMedium,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const EditProfileWidget(),
+                          ),
+                        );
+                      },
+                      child: MouseRegion(
+                        opaque: false,
+                        cursor: SystemMouseCursors.basic ?? MouseCursor.defer,
+
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 150),
+                          curve: Curves.easeInOut,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: _model.mouseRegionHovered2!
+                                ? FFTheme.of(context).primaryBackground
+                                : FFTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding:
+                                  const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                                  child: Icon(
+                                    //Icons.settings_outlined,
+                                    Icons.edit,
+                                    color:
+                                    FFTheme.of(context).primaryText,
+                                    size: 24,
                                   ),
                                 ),
-                              ),
-                            ],
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        12, 0, 0, 0),
+                                    child: Text(
+                                      'Settings',
+                                      style:
+                                      FFTheme.of(context).bodyMedium,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
+                        onEnter: ((event) async {
+                          setState(() => _model.mouseRegionHovered2 = true);
+                        }),
+                        onExit: ((event) async {
+                          setState(() => _model.mouseRegionHovered2 = false);
+                        }),
                       ),
-                      onEnter: ((event) async {
-                        setState(() => _model.mouseRegionHovered2 = true);
-                      }),
-                      onExit: ((event) async {
-                        setState(() => _model.mouseRegionHovered2 = false);
-                      }),
                     ),
                   ),
+
+
+
+
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 12, 4),
                     child: MouseRegion(
